@@ -38,7 +38,7 @@ class GalleryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonToLearn.setOnClickListener {
-            findNavController().navigate(GalleryFragmentDirections.actionNavGalleryToLearnFragment())
+            findNavController().navigate(GalleryFragmentDirections.actionNavGalleryToLearnFragment(false))
         }
     }
 

@@ -1,5 +1,6 @@
 package viby.testargs.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import viby.testargs.LearnActivity
 import viby.testargs.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -36,8 +38,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonToLearn.setOnClickListener {
+        binding.buttonToLearn1.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionNavHomeToLearnFragment())
+        }
+
+        binding.buttonToLearn2.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionNavHomeToLearnFragment(true))
+        }
+
+        binding.buttonToLearnActivity.setOnClickListener {
+            startActivity(Intent(requireContext(), LearnActivity::class.java))
         }
     }
 
